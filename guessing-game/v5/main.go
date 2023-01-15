@@ -12,7 +12,7 @@ import (
 
 func main() {
 	maxNum := 100
-	rand.Seed(time.Now().UnixNano())
+	rand.Seed(time.Now().UnixNano()) //随机种子
 	secretNumber := rand.Intn(maxNum)
 	// fmt.Println("The secret number is ", secretNumber)
 
@@ -24,9 +24,9 @@ func main() {
 			fmt.Println("An error occured while reading input. Please try again", err)
 			continue
 		}
-		input = strings.Trim(input, "\r\n")
+		input = strings.Trim(input, "\r\n") //去除首尾
 
-		guess, err := strconv.Atoi(input)
+		guess, err := strconv.Atoi(input) //转化为整数
 		if err != nil {
 			fmt.Println("Invalid input. Please enter an integer value")
 			continue
